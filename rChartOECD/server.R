@@ -10,7 +10,7 @@ shinyServer(function(input, output) {
       color = 'gender', data = women, type = 'bar')
     p1$layer(x = "countrycode", y = "value", color = 'gender', 
       data = men, type = 'point', size = list(const = 3))
-    p1$addParams(height = 300, dom = 'chart1', 
+    p1$addParams(height = 300, dom = 'chart1', 'nvd3' 
       title = "Percentage of Employed who are Senior Managers")
     p1$guides(x = list(title = "", ticks = unique(men$countrycode)))
     p1$guides(y = list(title = "", max = 18))
@@ -22,7 +22,7 @@ shinyServer(function(input, output) {
     p2 <- rPlot(value ~ year, color = 'gender', type = 'line', data = country)
     p2$guides(y = list(min = 0, title = ""))
     p2$guides(y = list(title = ""))
-    p2$addParams(height = 300, dom = 'chart2')
+    p2$addParams(height = 300, dom = 'chart2','ndv3')
     return(p2)
   })
 })
